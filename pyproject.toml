@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plain-contract-checker-cli"
+version = "0.1.0"
+description = "Plain-English pattern check for freelancer/vendor contracts, with an optional local AI review pass. Not legal advice."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["contract", "freelance", "small-business", "ollama", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = []
+
+[project.scripts]
+contract-checker = "contract_checker.cli:main"
+
+[tool.setuptools]
+packages = ["contract_checker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
